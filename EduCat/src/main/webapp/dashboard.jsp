@@ -41,9 +41,6 @@
                         -2px -0px 15px 2px rgba(0, 0, 0, 0.1);
                     z-index: 10;
                 }
-
-
-
                 .header {
                     margin-bottom: 30px;
                 }
@@ -132,14 +129,22 @@
                             <th>Gender</th>
                             <th>Course</th>
                         </tr>
-                        <% Connection conn=null; Statement stmt=null; ResultSet rs=null; try {
+                        <% Connection conn=null; 
+                        Statement stmt=null;
+                         ResultSet rs=null;
+                          try {
                             Class.forName("com.mysql.cj.jdbc.Driver");
                             conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/edu", "root" , "pass" );
-                            stmt=conn.createStatement(); String sql="SELECT * FROM students" ;
-                            rs=stmt.executeQuery(sql); while (rs.next()) { String id=rs.getString("id"); String
-                            name=rs.getString("name"); String email=rs.getString("email"); String
-                            dob=rs.getString("dob"); String gender=rs.getString("gender"); String
-                            course=rs.getString("course"); %>
+                            stmt=conn.createStatement();
+                             String sql="SELECT * FROM students" ;
+                            rs=stmt.executeQuery(sql);
+                             while (rs.next()) {
+                            String id=rs.getString("id"); String
+                            name=rs.getString("name"); 
+                            String email=rs.getString("email"); 
+                            String  dob=rs.getString("dob");
+                             String gender=rs.getString("gender");
+                              String course=rs.getString("course"); %>
                             <tr>
                                 <td>
                                     <%= id %>
